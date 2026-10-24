@@ -6,6 +6,12 @@
 <title>HostFlux cPanel Hosting</title>
 <meta name="description" content="cPanel web hosting with email, SSL and one-click installs. Choose a plan and get started.">
 <meta name="theme-color" content="#0b1020">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="HostFlux">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <style>
 :root{--ink:#0b1020;--panel:#131a2e;--line:#27304a;--text:#e8ecf6;--mute:#9aa4bf;--accent:#4f8cff;--accent-2:#7cc4ff;--radius:14px;--max:1080px;color-scheme:dark}
 @media (prefers-color-scheme: light){:root{--ink:#f5f7fb;--panel:#ffffff;--line:#dde3ee;--text:#14192b;--mute:#5b6580;--accent:#1f6fd6;--accent-2:#2b7fe0;color-scheme:light}}
@@ -128,5 +134,12 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-si
 <footer>
   <div class="wrap">&copy; 2026 HostFlux. All rights reserved. *Fair-use limits may apply.</div>
 </footer>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./sw.js", { scope: "./" }).catch(function () {});
+  });
+}
+</script>
 </body>
 </html>
